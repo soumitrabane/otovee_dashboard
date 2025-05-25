@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Otovee PCOS Health Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Otovee</h1>
+    <p>Your Personalized PCOS Health Companion</p>
+  </header>
+
+  <main class="container">
+    <section class="card welcome-panel">
+      <h2>Welcome to Otovee</h2>
+      <p>
+        Otovee is your personal wellness companion, designed to help you manage PCOS with ease and empathy.
+        Our platform empowers you to log symptoms, visualize progress, and access guidance tailored to your needs.
+      </p>
+      <ul>
+        <li>Log and track your daily symptoms easily</li>
+        <li>Understand your health trends with visual insights</li>
+        <li>Chat with a friendly bot for instant answers</li>
+        <li>Prioritize your well-being with a tool built just for you</li>
+      </ul>
+    </section>
+
+    <div class="symptom-cycle-wrapper">
+      <section class="card symptom-tracker">
+        <h2>Symptom Tracker</h2>
+        <div class="symptom-grid">
+          <form id="symptom-form">
+            <label><input type="checkbox" name="symptom" value="Bloating" /> Bloating</label>
+            <label><input type="checkbox" name="symptom" value="Acne" /> Acne</label>
+            <label><input type="checkbox" name="symptom" value="Irregular Periods" /> Irregular Periods</label>
+            <label><input type="checkbox" name="symptom" value="Hair Loss" /> Hair Loss</label>
+            <button type="button" onclick="saveSymptoms()">Save Symptoms</button>
+          </form>
+          <canvas id="symptomChart"></canvas>
+        </div>
+      </section>
+
+      <section class="card cycle-tracker">
+        <h2>Cycle Tracker</h2>
+        <div class="cycle-info" id="cycle-info"></div>
+        <div class="cycle-bar">
+          <div class="cycle-progress" id="cycle-progress"></div>
+        </div>
+        <p class="note">Estimated phase based on a standard 28-day cycle.</p>
+      </section>
+    </div>
+
+    <section class="card progress-summary">
+      <h2>Progress Summary</h2>
+      <div id="summary">
+        <p>No data yet. Track symptoms to see your progress!</p>
+      </div>
+    </section>
+
+    <section class="card chatbot">
+      <h2>Otovee Chatbot</h2>
+      <div class="chatbox" id="chatbox">
+        <div class="bot">Hi! I'm here to support your wellness journey.</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Ask me about PCOS, symptoms, or tips..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Otovee by Ecolve Technologies. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
